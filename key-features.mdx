@@ -1,0 +1,64 @@
+---
+title: Key Features
+icon: solar-system
+---
+import CurrentFeatures from "./current-features.mdx"
+
+<strong>Encrova</strong> is a cutting-edge secrets management platform designed to securely store, manage, and share sensitive credentials across your infrastructure. With robust encryption, granular access controls, and seamless integrations, Encrova ensures that your secrets remain protected while enabling efficient collaboration and automation.
+
+<Tabs>
+    <Tab title="Current Features">
+        Our latest release enhances data security and access control with robust encryption and seamless integration capabilities.
+        This update introduces:
+
+        <CardGroup cols={1}>
+            <Card title="Secure Secret Storage" icon="lock">
+                <li>AES-256 encryption ensures secrets are stored securely.</li>
+            </Card>
+            <Card title="Symmetric Encryption" icon="autoprefixer">
+                Fast and efficient encryption using AES-256, suitable for securing large datasets.
+            </Card>
+            <Card title="Org. Access Control" icon="buildings">
+                Multitenancy support to maintain the Tenants
+            </Card>
+            <Card title="API & SDK integration" icon="webhook">
+                REST API and SDKs for seamless integration into applications for Symmetric encryption. It supports Python and Javascript
+            </Card>
+            <Card title="Secret Sharing " icon="link">
+                Securely share encrypted secrets with authorized users while maintaining strict access control and encryption policies. This ensures that sensitive credentials, such as API keys, database passwords, and encryption keys, are only accessible to the right individuals or systems without compromising security.
+            </Card>
+
+        </CardGroup>
+    </Tab>
+    <Tab title="Upcoming Features">
+        <CardGroup cols={1}>
+            <Card title="Secure Secret Storage" icon="lock">
+                <li>RSA, ECC certificate chains are stored securely</li>
+                <li>SSH credentials to provide secure and centralized SSH access control for your infrastructure.</li>
+                <li>End-to-end encryption, meaning even Encrova itself cannot access the secrets.</li>
+            </Card>
+            <Card title="Role-Based Access Control (RBAC) & Permissions" icon="ruler-triangle">
+                <li>IAM integration for SSO and LDAP</li>
+                <li>Fine-grained access control for users and teams.</li>
+                <li>Supports multiple permission levels to restrict secret access.</li>
+            </Card>
+            <Card title="Environment Management" icon="seedling">
+                <li>Organize secrets by environments (e.g., dev, staging, production).</li>
+                <li>Sync secrets across different environments easily.</li>
+            </Card>
+            <Card title="Secret Versioning & Audit Logs" icon="code-branch">
+                <li>Organize secrets by environments (e.g., dev, staging, production).</li>
+                <li>Logs user activity for compliance and security monitoring.</li>
+            </Card>
+            <Card title="Dynamic & Ephemeral Secrets" icon="key">
+                <li>Generate short-lived secrets for better security.</li>
+                <li>Auto-rotation of secrets to reduce exposure risks.</li>
+            </Card>
+            <Card title="API & SDK Integrations" icon="code">
+                <li>REST API and SDKs for seamless integration into applications.</li>
+                <li>Support for popular languages like, Python, and Node.js</li>
+            </Card>
+        </CardGroup>
+    </Tab>
+</Tabs>
+

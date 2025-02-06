@@ -1,0 +1,76 @@
+---
+title:
+icon: compass-drafting
+---
+
+---
+Overview
+---
+Encrova is a secrets management platform designed to securely store, distribute, and manage sensitive data such as API keys, credentials, and encryption keys across applications and infrastructure. It provides end-to-end encryption to ensure that secrets remain confidential and protected from unauthorized access.
+
+---
+High level Architecture
+---
+
+<Frame>
+    <img src="/images/architecture.png" />
+</Frame>
+
+---
+Key Architectural Components
+---
+
+<AccordionGroup cols={1}>
+    <Accordion title="Client SDKs & APIs" icon="webhook" horizontal>
+        <ul>
+            <li>Encrova provides SDKs (for multiple languages) and a RESTful APIs to interact with secrets.</li>
+            <li>Developers can fetch secrets at runtime, inject them into environments, and manage secrets without exposing them in code.</li>
+            <li>Supports integrations with Docker, Kubernetes, Terraform, and CI/CD pipelines.</li>
+            </ul>
+    </Accordion>
+    <Accordion title="Encrova Server" icon="server" horizontal>
+        <ul>
+            <li>A centralized backend that manages secrets, access control, and encryption policies.</li>
+            <li>Provides RESTful APIs for fetching and updating secrets.</li>
+            <li>Supports self-hosting or a cloud-based deployment.</li>
+        </ul>
+
+    </Accordion>
+    <Accordion title="Database (PostgreSQL)" icon="database" horizontal>
+        <ul>
+            <li>Stores encrypted secrets, metadata, and access logs.</li>
+            <li>Uses role-based access control (RBAC) to manage user permissions.</li>
+        </ul>
+
+    </Accordion>
+    <Accordion title="Encryption Mechanism" icon="key-skeleton-left-right" horizontal>
+        <ul>
+            <li><strong>End-to-end encryption (E2EE)</strong> ensures that secrets are encrypted before leaving the client.</li>
+            <li><strong>AES-256 encryption</strong> is used for storage.</li>
+            <li>Uses <strong>RSA/ECC</strong> for asymmetric encryption when sharing secrets securely between users.</li>
+            <li>Supports integration with <strong>hardware security modules (HSMs)</strong> or cloud-based <strong>key management services (KMS).</strong></li>
+        </ul>
+
+    </Accordion>
+    <Accordion title="Access Control & Role-Based Permissions" icon="universal-access" horizontal>
+        <ul>
+        <li>Implements <strong>RBAC</strong> to restrict secret access based on user roles.</li>
+        <li>Supports <strong>workspace-level access control</strong> where different teams can have separate environments.</li>
+        <li>Uses OAuth & SSO for authentication (Google, GitHub, SAML, etc.).</li>
+        </ul>
+    </Accordion>
+    <Accordion title="Secret Injection & Sync" icon="rotate" horizontal>
+        <ul>
+        <li>Allows secrets to be injected directly into <strong>Docker, Kubernetes, AWS Lambda,</strong> and other environments at runtime.</li>
+        <li>Syncs secrets with <strong>cloud providers like AWS SSM, Azure Key Vault, and HashiCorp Vault.</strong></li>
+        </ul>
+    </Accordion>
+    <Accordion title="Auditing & Logging" icon="pen-to-square" horizontal>
+        <ul>
+            <li>Logs secret access and modification events for security compliance.</li>
+            <li>Can integrate with <strong>SIEM tools (like ELK)</strong> for real-time monitoring.</li>
+        </ul>
+    </Accordion>
+</AccordionGroup>
+
+

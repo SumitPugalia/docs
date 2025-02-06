@@ -1,0 +1,98 @@
+---
+sidebar_position: 0
+title: JavaScript SDK
+icon: js
+iconType: solid
+---
+import TeamChannels from "/snippets/_team-channels.mdx"
+
+<Note>
+**Related Links**
+- [Github Repo](https://github.com/LocAI1/platform-encryption-javascript-sdk)
+</Note>
+
+This SDK provides a set of JavaScript utilities for interacting with the Encryption Service, offering functions and helpers to facilitate encryption and decryption.
+
+
+## Pre-requisites
+Before installing this package, make sure to follow below steps:
+<Steps>
+<Step title="Request repository access to the Packages" >
+Reach out to Platform team to request access to the Packages repository:
+<TeamChannels />
+</Step>
+<Step title="Generate a personal access token">
+    Generate a personal access token with the following scopes:<br/><Icon icon="square-check" /> **repo**
+    <br/><Icon icon="square-check" /> **read:packages**
+</Step>
+<Step title="Create an .npmrc file">
+
+Create an .npmrc file and add below code:
+```bash
+@locai1:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=YOUR_PERSONAL_ACCESS_TOKEN
+```
+</Step>
+</Steps>
+
+
+
+## Install
+
+Download the package using your preferred package manager:
+
+<CodeGroup>
+```bash pnpm
+pnpm install @locai1/encrova-sdk
+````
+
+```bash npm
+npm install @locai1/encrova-sdk
+````
+
+```bash yarn
+yarn add @locai1/encrova-sdk
+````
+</CodeGroup>
+
+## Quickstart
+
+<li>Import the EncryptionService from the package.</li>
+<li>Initialize the EncryptionService with environment and API_KEY.</li>
+<li>Call the desired method on the EncryptionService instance.</li>
+
+```typescript
+    import {
+    EncryptionServiceEnv,
+    EncryptionService,
+} from "encrova-sdk"
+
+    const ENCROVA_ENV = EncryptionServiceEnv.dev
+    const ENCROVA_API_KEY = "";
+
+    const encService = new EncryptionService({
+    env: ENCROVA_ENV,
+    apiKey: ENCROVA_API_KEY,
+});
+
+    // Generate Secret Key
+
+    const {secretKey} = await encService.generateSecretKey({
+    projectName: 'sample_project',
+    projectDescription: 'This is a sample project',
+    type: 'symmetric',
+});
+
+    // Example: Symmetric Encryption of data
+    const response = await encService.encryptSymmetric(
+    "{ name: 'jhon', email: 'jhon.doe@test.com' }",
+    secretKey,
+    );
+
+    // Example: Symmetric Decryption of data
+    const decryptedData = await encService.decryptSymmetric(
+    response.encryptedData,
+    );
+```
+
+

@@ -1,0 +1,23 @@
+---
+title: User Identities
+description: "Read more about the concept of user identities in Encrova."
+---
+
+## Concept
+
+A **user identity** (also known as **user**) represents a developer, admin, or any other human entity interacting with resources in Encrova. 
+
+Users can be added manually (through Web UI) or programmatically (e.g., API) to [organizations](../organization) and [projects](../projects). 
+
+Upon being added to an organization and projects, users assume a certain set of roles and permissions that represents their identity. 
+<Frame>
+    <img src="/images/organization-members.png" />
+</Frame>
+
+## Authentication methods
+
+To interact with various resources in Encrova, users are able to utilize a number of authentication methods: 
+- **Email & Password**: the most common authentication method that is used for authentication into Web Dashboard and Encrova CLI. It is recommended to utilize <b>Multi-factor Authentication</b> in addition to it.
+- **SSO**: Encrova natively integrates with a number of SSO identity providers like <b>Google, GitHub,</b> and <b>GitLab.</b>
+- **SAML SSO**: It is also possible to set up SAML SSO integration with identity providers like <b>Okta, Microsoft Entra ID (formerly known as Azure AD), JumpCloud, Google,</b> and more.
+- **LDAP**: For organizations with more advanced needs, Encrova also provides user authentication with <b>LDAP</b> that includes a number of LDAP providers.

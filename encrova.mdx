@@ -1,0 +1,79 @@
+---
+title : Encrova Secret Manager
+icon : infinity
+---
+
+---
+Introduction
+----
+
+Encrova is a Platform secrets management application designed to securely store, distribute, and manage sensitive credentials such as API keys, database passwords, cert chains, and encryption secrets.
+<br/><br/>It helps developers and organizations centralize secret management, ensuring security and compliance while streamlining access across development, staging, and production environments.
+<br/><br/>Encrova integrates seamlessly with various cloud providers, container orchestration platforms, and CI/CD pipelines, making it a comprehensive solution for secure secret handling.
+
+<Frame>
+    <img src="/images/encrova_login.png" alt="encrova login page" />
+</Frame>
+<br/>
+<Frame>
+    <img src="/images/encrova_detail.png" alt="encrova detail page" />
+</Frame>
+
+
+<CardGroup cols={1}>
+    <Card
+        title="Encrova Client"
+        href="https://secret-manager.t.platform.dev.ai71services.ai/"
+        icon="infinity"
+    >
+        Get started with Encrova  in just a few minutes.
+    </Card>
+</CardGroup>
+
+---
+Why Encrova?
+---
+<li><strong>Improves security</strong> by reducing secret sprawl and enforcing encryption best practices.</li>
+<li><strong>Enhances developer experience</strong> with a user-friendly UI and CLI for managing secrets.</li>
+<li><strong>Automates secret management</strong> with dynamic and rotating secrets.</li>
+<li><strong>Ensures compliance</strong> with security standards (SOC 2, GDPR, HIPAA).</li>
+
+## How does Encrova work?
+
+To make secret management effortless and secure, Encrova follows a certain structure for enabling secret management workflows as defined below.
+
+**Identities** in Encrova are users or machine which have a certain set of roles and permissions assigned to them. Such identities are able to manage secrets in various **Clients** throughout the entire infrastructure. To do that, identities have to verify themselves through one of the available **Authentication Methods**.
+
+As a result, the 3 main concepts that are important to understand are:
+
+- **[Identities](/documentation/platform/identities/overview)**: users or machines with a set permissions assigned to them.
+- **[Clients](/integrations/platforms/kubernetes)**: Encrova-developed tools for managing secrets in various infrastructure components (e.g., [SDKs](/libraries/javascript), [API](/api-reference), [Web Dashboard](https://secret-manager.t.platform.dev.ai71services.ai/)).
+- **[Authentication Methods](/documentation/platform/identities/universal-auth)**: ways for Identities to authenticate inside different clients (e.g., SAML SSO for Web Dashboard, Universal Auth for Encrova Agent, AWS Auth etc.).
+
+## How to get started with Encrova?
+
+Depending on your use case, it might be helpful to look into some of the resources and guides provided below.
+
+<CardGroup cols={2}>
+    <Card
+        title="SDKs"
+        href="/documentation/getting-started/sdks"
+        icon="boxes-stacked"
+    >
+        Fetch secrets with any programming language on demand.
+    </Card>
+    <Card
+        href="/documentation/getting-started/api"
+        title="REST API"
+        icon="cloud"
+    >
+        Fetch secrets via HTTP request.
+    </Card>
+    <Card
+        href="/integrations/overview"
+        title="Native Integrations"
+        icon="clouds"
+    >
+        Explore integrations for GitHub, Vercel, AWS, and more.
+    </Card>
+</CardGroup>

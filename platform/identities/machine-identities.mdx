@@ -1,0 +1,64 @@
+---
+title: Machine Identities
+description: "Learn how to use Machine Identities to programmatically interact with Encrova."
+---
+
+## Concept
+
+An Encrova machine identity is an entity that represents a workload or application that require access to various resources in Encrova. This is conceptually similar to an IAM user in AWS or service account in Google Cloud Platform (GCP).
+
+Each identity must authenticate with the Encrova API using a supported authentication method like <b>Token Auth, Universal Auth, Kubernetes Auth, AWS Auth, Azure Auth, or GCP Auth</b> to get back a short-lived access token to be used in subsequent requests.
+<Frame>
+    <img src="/images/organization-machine-identities.png"/>
+</Frame>
+
+Key Features:
+
+- Role Assignment: Identities must be assigned <b>roles</b>. These roles determine the scope of access to resources, either at the organization level or project level.
+- Auth/Token Configuration: Identities must be configured with corresponding authentication methods and access token properties to securely interact with the Encrova API.
+
+## Workflow
+
+A typical workflow for using identities consists of four steps:
+
+1. Creating the identity with a name and <b>role</b> in Organization Access Control > Machine Identities.
+   This step also involves configuring an authentication method for it.
+2. Adding the identity to the project(s) you want it to have access to.
+3. Authenticating the identity with the Encrova API based on the configured authentication method on it and receiving a short-lived access token back.
+4. Authenticating subsequent requests with the Encrova API using the short-lived access token.
+
+## Authentication Methods
+
+To interact with various resources in Encrova, Machine Identities can authenticate with the Encrova API using:
+
+- <b>Token Auth</b>: A platform-agnostic, simple authentication method suitable to authenticate with Encrova using a token.
+- <b>Universal Auth</b>: A platform-agnostic authentication method suitable to authenticate with Encrova using a Client ID and Client Secret.
+- <b>Kubernetes Auth</b>: A Kubernetes-native authentication method for applications (e.g. pods).
+- <b>AWS Auth</b>: An AWS-native authentication method for AWS services (e.g. EC2, Lambda functions, etc.).
+- <b>Azure Auth</b>: An Azure-native authentication method for Azure resources (e.g. Azure VMs, Azure App Services, Azure Functions, Azure Kubernetes Service, etc.).
+- <b>GCP Auth</b>: A GCP-native authentication method for GCP resources (e.g. Compute Engine, App Engine, Cloud Run, Google Kubernetes Engine, IAM service accounts, etc.).
+- <b>OIDC Auth</b>: A platform-agnostic, JWT-based authentication method for workloads using an OpenID Connect identity provider.
+
+## FAQ
+
+<AccordionGroup>
+<Accordion title="Can I use machine identities with the CLI?">
+Yes - Identities can be used with the CLI.
+</Accordion>
+
+<Accordion title="What is the difference between an identity and service token?">
+  A service token is a project-level authentication method that is being deprecated in favor of identities. The service token method will be removed in the future in accordance with the deprecation notice .
+  
+  Amongst many differences, identities provide broader access over the Encrova API, utilizes the same
+  permission system as user identities, and come with a significantly larger number of configurable authentication and security features.
+  
+  If you're looking for a simple authentication method, similar to service tokens, that can be bound onto an identity.
+</Accordion>
+<Accordion title="Why can I not create, read, update, or delete an identity?">
+  There are a few reasons for why this might happen:
+  
+  - You have insufficient organization permissions to create, read, update, delete identities.
+  - The identity you are trying to read, update, or delete is more privileged than yourself.
+  - The role you are trying to create an identity for or update an identity to is more privileged than yours.
+</Accordion>
+</AccordionGroup>

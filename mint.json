@@ -1,91 +1,114 @@
+
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "Platform Encrova  Service Docs",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "/logo/encrova_logo_dark.png",
+    "light": "/logo/encrova-logo.png"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/logo/ai71-logo.svg",
+  "font" : {
+    "family" : "Darker Grotesque",
+    "size" : "1.3rem"
+  },
+  "metadata": {
+    "og:title": "Platform Encrova  Docs",
+    "og:image": "/images/favicon.png",
+    "og:description": "Docs for Encrova Service related modules",
+    "og:logo": "/logo/locai-logo.svg"
+  },
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
+    "primary": "#2392eb",
+    "light": "#3295e7",
+    "dark": "#1b8ae4",
     "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
+      "from": "#2392eb",
+      "to": "#1b8ae4"
     }
   },
-  "topbarLinks": [
-    {
-      "name": "Support",
-      "url": "mailto:hi@mintlify.com"
-    }
-  ],
-  "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
-  },
-  "tabs": [
-    {
-      "name": "API Reference",
-      "url": "api-reference"
-    }
-  ],
+  "theme": "prism",
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
-      "name": "Community",
+      "name": "Slack",
       "icon": "slack",
-      "url": "https://mintlify.com/community"
+      "iconType": "solid",
+      "url": "https://locai-workspace.slack.com/archives/C07GY8L0NPK"
+    }
+  ],
+  "tabs": [
+    {
+      "name": "Documentation",
+      "url": "/"
     },
     {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "name": "SDK",
+      "url": "libraries"
+    },
+    {
+      "name": "API Reference",
+      "url": "api-reference",
+      "openapi": "https://encryption.platform.dev.ai71services.ai/openapi.json"
     }
   ],
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "Getting Started",
       "pages": [
-        "introduction",
-        "quickstart",
-        "development"
+        "encrova",
+        "architecture",
+        "usecase",
+        "key-features",
+        "roadmap"
       ]
     },
     {
-      "group": "Essentials",
+      "group": "Platform",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "platform/organization",
+        "platform/project",
+        "platform/folder",
+        {
+          "group" : "Identities",
+          "icon": "face-viewfinder",
+          "pages" : [
+            "platform/identities/overview",
+            "platform/identities/user-identities",
+            "platform/identities/machine-identities"
+          ]
+        },
+        {
+          "group": "Internal PKI",
+          "icon" : "certificate",
+          "pages": [
+            "platform/pki/overview",
+            "platform/pki/private-ca",
+            "platform/pki/certificates",
+            "platform/pki/alerting"
+          ]
+        },
+        "platform/kms/overview",
+        "platform/ssh",
+        "platform/secret-sharing",
+        {
+          "group": "Secret Rotation",
+          "icon" : "rotate",
+          "pages": [
+            "platform/secret-rotation/overview",
+            "platform/secret-rotation/sendgrid",
+            "platform/secret-rotation/postgres",
+            "platform/secret-rotation/mysql",
+            "platform/secret-rotation/mssql",
+            "platform/secret-rotation/aws-iam"
+          ]
+        }
       ]
     },
     {
-      "group": "API Documentation",
+      "group": "",
       "pages": [
-        "api-reference/introduction"
-      ]
-    },
-    {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "libraries/javascript",
+        "libraries/python"
       ]
     }
-  ],
-  "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://linkedin.com/company/mintlify"
-  }
+  ]
 }

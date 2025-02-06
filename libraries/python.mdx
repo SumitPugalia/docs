@@ -1,0 +1,80 @@
+---
+title : Python SDK
+icon : python
+iconType: solid
+---
+import TeamChannels from "/snippets/_team-channels.mdx"
+
+A Python SDK for platform encryption operations, providing secure encryption and decryption capabilities.
+
+<Note>
+    **Related Links**
+    - [Github Repo](https://github.com/LocAI1/platform-encryption-python-sdk)
+</Note>
+---
+Pre-requisites
+---
+<Steps>
+
+    <Step title='Request repository access to the Packages'>
+        Reach out to Platform team to request access to the Packages repository:
+        <TeamChannels />
+    </Step>
+
+    <Step title='Requirements'>
+        <li>Python 3.7+</li>
+        <li>API & Secret Key</li>
+       <Warning>
+           Reach out to Platform team for any assistance.
+           <ul>You can generate an API and Secret Key using the Encryption Service APIs. Refer to the API Reference for further details.</ul>
+       </Warning>
+    </Step>
+</Steps>
+---
+Installation
+---
+```bash
+pip install git+https://github.com/LocAI1/platform-encryption-python-sdk.git
+````
+If you encounter an HTTP 404 error, please follow these steps:
+```bash
+brew install gh
+gh auth login
+pip install git+https://github.com/LocAI1/platform-encryption-python-sdk.git
+````
+---
+Usage
+---
+See the example below or check example.py for detailed usage:
+
+
+```python
+
+import asyncio
+
+from encrova_sdk.EncrovaSDKClient import EncrovaSDKClient
+
+async def main():
+
+    encrova_client = EncrovaSDKClient(
+            host="http://localhost:8000",
+            encryption_type="symmetric"
+    )
+    jwe = await encrova_client.service.encrypt(
+        payload={"userName" : "udayakumar.rajan", "password" : "password123"}},
+        api_key=<Your API key>,
+        secret_key=<Your secret key>
+    )
+    print(f"jwe : {jwe}")
+
+    plaintext = await encrova_client.service.decrypt(
+        jwe=jwe,
+        api_key=<Your API key>
+    )
+    print(f"plain text : {plaintext}")
+
+
+""" Run the async main function """
+if __name__ == "__main__":
+    asyncio.run(main())
+```

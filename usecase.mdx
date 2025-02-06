@@ -1,0 +1,106 @@
+---
+title : Use cases
+icon : users
+---
+
+Encrova is a <strong>secrets management</strong> and <strong>access control</strong> platform
+designed to securely store, distribute, and manage sensitive data across applications and
+infrastructure. Below are detailed use cases relevant to different scenarios, including your
+<strong>encryption service, IAM system, and SaaS developer portal.</strong>
+
+<AccordionGroup cols="1">
+    <Accordion title="Secrets Management for SaaS & Microservices" icon="key">
+        <ul>
+            <li>Store and manage API keys, database credentials, and third-party service tokens
+                in <strong>Encrova Vault</strong> instead of storing them in code or environment
+                variables.</li>
+            <li> Dynamically inject secrets into applications running in <strong>Kubernetes, Docker, or cloud environments (AWS,
+                GCP, Azure)</strong></li>
+            <li> Automatically <strong>rotate credentials</strong> and notify services about updates.</li>
+        </ul>
+
+        <Note>
+            <b>Example for Your IAM System:</b>
+            <ul>
+                <li>Store <strong>IAM password, Zitadel API keys, Cerbos policy secrets,</strong> and <strong>getLago
+                    billing tokens</strong> securely.</li>
+                <li>Grant access to these secrets only to authorized microservices.</li>
+            </ul>
+
+
+        </Note>
+    </Accordion>
+    <Accordion title="Encryption Key Management" icon="keycdn">
+<ul>
+    <li>Store <b>symmetric (AES) and asymmetric (RSA, ECC) encryption keys</b> in a <b>secure vault.</b></li>
+    <li>Automatically <b>rotate keys</b> after a set period to minimize risk.</li>
+    <li>Use <b>role-based access control (RBAC)</b> to ensure only authorized services can retrieve keys</li>
+</ul>
+
+        <Note>
+            <b>Example for Your Encryption Service:</b>
+            <br/><br/>
+            <li>Store <b>JWE encryption keys</b> securely.</li>
+            <li>Control access to prevent unauthorized decryption.</li>
+            <li>Maintain an <b>audit log</b> of all key usage for compliance.</li>
+        </Note>
+    </Accordion>
+    <Accordion title="Secrets Synchronization Across Environments" icon="rotate">
+        <ul>
+            <li>Manage secrets across <b>development, staging, and production</b> environments.</li>
+            <li>Automatically sync secrets with <b>AWS Parameter Store, Azure Key Vault, Google Secret Manager,
+                Kubernetes Secrets, and HashiCorp Vault.</b></li>
+        <li>Reduce the risk of <b>misconfigurations</b> by ensuring the right secrets are used in each environment.</li>
+        </ul>
+
+        <Note>
+            <b> Example:</b>
+                <ul>
+            <li>Sync secrets between your application’s <b>backend, IAM system, and billing service.</b></li>
+            <li>Ensure staging uses test credentials, while production uses live credentials.</li>
+                </ul>
+        </Note>
+    </Accordion>
+    <Accordion title="Auditing & Compliance for Security Regulations" icon="shield">
+        <ul>
+            <li>Maintain an <b>audit log</b> of all secret access, updates, and deletions.</li>
+            <li>Set up <b>alerts</b> for unauthorized access attempts.</li>
+            <li>Meet security standards like <b>ISO 27001, SOC 2, GDPR, and PCI-DSS.</b></li>
+        </ul>
+        <Note>
+            <b>Example for Your Encryption Service:</b>
+            <ul>
+                <li>Track who accessed encryption keys and when.</li>
+                <li>Generate compliance reports for security audits.</li>
+            </ul>
+        </Note>
+    </Accordion>
+    <Accordion title="Secure Secrets Sharing Between Teams & Workspaces" icon="screen-users">
+        <ul>
+            <li>Use <b>workspace-based access control</b> to manage secrets across different teams or clients.</li>
+            <li>Define <b>fine-grained access permissions</b> (e.g., DevOps, Security, Developers).</li>
+            <li>Share secrets securely without exposing them via plaintext emails or Slack messages.</li>
+        </ul>
+        <Note>
+            <b>Example for Your SaaS Developer Community:</b>
+            <ul>
+            <li>Grant <b>developers access to API keys only for the sandbox environment.</b></li>
+            <li>Restrict access to production secrets to <b>admin users only.</b></li>
+            </ul>
+        </Note>
+    </Accordion>
+    <Accordion title="Incident Response & Secret Revocation" icon="brake-warning">
+        <ul>
+            <li>If a secret is leaked (e.g., exposed in a GitHub repository), <b>immediately revoke it.</b></li>
+            <li>Use <b>Encrova API to update secrets</b> in real-time without redeploying applications.</li>
+            <li>Automate <b>secret rotation in response to security incidents.</b></li>
+        </ul>
+        <Note>
+            <b>Example for Your IAM & Encryption Service:</b>
+            <ul>
+                <li>If a JWT signing key is leaked, revoke it and issue new tokens.</li>
+                <li>Detect and respond to unauthorized access attempts automatically.</li>
+            </ul>
+        </Note>
+    </Accordion>
+</AccordionGroup>

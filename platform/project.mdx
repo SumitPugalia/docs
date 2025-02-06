@@ -1,0 +1,74 @@
+---
+title: "Projects"
+description: "Learn more and understand the concept of Infisical projects."
+icon : diagram-project
+---
+
+A project in Encrova belongs to an [organization](./organization) and contains a number of environments, folders, and secrets.
+Only users and machine identities who belong to a project can access resources inside of it according to predefined permissions. 
+
+## Project environments
+
+For both visual and organizational structure, Encrova allows splitting up secrets into environments (e.g., development, staging, production). In project settings, such environments can be
+customized depending on the intended use case. 
+
+<Frame>
+    <img src="/images/project-environments.png"/>
+</Frame>
+
+## Secrets Overview
+
+The **Secrets Overview** page captures a birds-eye-view of secrets and [folders](./folder) across environments. 
+This is useful for comparing secrets, identifying if anything is missing, and making quick changes.
+
+<Frame>
+    <img src="/images/secret_overview.png"/>
+</Frame>
+
+
+## Secrets Dashboard
+
+The **Secrets Dashboard** page appears when you press to manage the secrets of a specific environment.
+
+<Frame>
+    <img src="/images/secret_dashboard.png"/>
+</Frame>
+
+### Secrets
+
+To add a secret, press **Add Secret** button at the top of the dashboard.
+
+<Frame>
+    <img src="/images/add_secret.png"/>
+</Frame>
+
+For a new project, it can be convenient to populate the dashboard by dropping a `.env` file into the provided pane as shown below:
+
+<Frame>
+    <img src="/images/project-secrets-drop-env.png"/>
+</Frame>
+
+To delete  secret at once, hover over and select the secrets you'd like to delete
+and press the **Delete** button that appears at the top.
+
+<Frame>
+    <img src="/images/delete_secrets.png"/>
+</Frame>
+
+### Search
+
+To search for specific secrets by their key name, you can use the search bar.
+
+<Frame>
+    <img src="/images/delete_secrets.png"/>
+</Frame>
+
+### Hide/Un-hide
+
+To view/hide all secrets at once, toggle the hide or un-hide button.
+
+<Frame>
+    <img src="/images/hide-secrets.png"/>
+</Frame>
+
+

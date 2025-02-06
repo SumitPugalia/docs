@@ -1,12 +1,4 @@
-# Mintlify Starter Kit
-
-Click on `Use this template` to copy the Mintlify starter kit. The starter kit contains examples including
-
-- Guide pages
-- Navigation
-- Customizations
-- API Reference pages
-- Use of popular components
+# IAM Docs
 
 ### Development
 
@@ -14,6 +6,12 @@ Install the [Mintlify CLI](https://www.npmjs.com/package/mintlify) to preview th
 
 ```
 npm i -g mintlify
+```
+
+Install mintlify dependencies
+
+```
+mintlify install
 ```
 
 Run the following command at the root of your documentation (where mint.json is)
