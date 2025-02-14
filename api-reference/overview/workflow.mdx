@@ -1,0 +1,87 @@
+---
+title : Workflow
+---
+
+
+### Onboarding
+This flowchart represents the onboarding process for an application that involves encryption. Based on the selected encryption type (Symmetric or Asymmetric), different steps are followed to ensure secure key or certificate management. The final output is either a set of secrets or a certificate, which is then processed or stored in Encrova.
+### Process Flow
+<ul>
+    <li>Onboarding app starts the process.</li>
+    <li>Determines the encryption type: Symmetric or Asymmetric.</li>
+    <li>Creates a workspace</li>
+    <li>
+        <b>If Asymmetric Encryption is chosen:</b>
+        <ul>
+            <li>Sets up a <b>Certificate Authority (CA).</b></li>
+            <li>Issues a certificate.</li>
+            <li>Stores or processes the certificate in <b>Encrova.</b></li>
+        </ul>
+    </li>
+    <li>
+        <b>If Symmetric Encryption is chosen:</b>
+        <ul>
+            <li>Creates secrets.</li>
+            <li>Stores or processes the secrets in <b>Encrova.</b></li>
+        </ul>
+    </li>
+
+</ul>
+
+```mermaid
+%%{
+    init: {
+    'theme': 'base',
+    'themeVariables': {
+    'primaryColor': '#1b8ae4',
+    'primaryTextColor': '#fff',
+    'primaryBorderColor': '#1b8ae4',
+    'lineColor': '#1b8ae4',
+    'tertiaryColor': '#fff',
+    'darkMode' : 'true'
+}
+}
+}%%
+flowchart TD
+B["Onboarding App"] --> C{"Encryption Type (Symmetric or Asymmetric)"}
+C  --> D["Create workspace"]
+D -- Asymmetric--> E{"Create workspace"}
+D -- Symmetric--> F["Create Secrets"]
+E --> G["Create Certificate Authority"]
+G --> H["Issue Certificate"]
+H--> I["Encrova"]
+F --> I
+
+```
+
+### Encryption / Decryption
+
+```mermaid
+%%{
+    init: {
+    'theme': 'base',
+    'themeVariables': {
+    'primaryColor': '#1b8ae4',
+    'primaryTextColor': '#fff',
+    'primaryBorderColor': '#1b8ae4',
+    'lineColor': '#1b8ae4',
+    'tertiaryColor': '#fff',
+    'darkMode' : 'true'
+}
+}
+}%%
+flowchart TD
+    B["Encrova API or SDK"] --> C["Access using API Key and Secret Key)"]
+    C  --> D["Encrova Service"]
+    D  --> E{"Encryption Type"}
+    E -- Symmetric--> F[Secrets from Encrova]
+    E -- Asymmetric--> G[Certificate from Encrova]
+    F-->H[Encryption or Decryption]
+    G-- encryption -->I[Extract Public cert]
+    I-->J[Encrypt payload]
+    G-- decryption -->K[Extract private cert]
+    K -->L[Decrypt JWE]
+    L--plain text-->B
+    J--JWE-->B
+    H--JWE or plain text-->B
+```

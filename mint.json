@@ -1,7 +1,8 @@
 
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Platform Encrova  Service Docs",
+  "name": "Platform Encrova",
+  "openapi": "https://7cbd-91-73-95-41.ngrok-free.app/openapi.json",
   "logo": {
     "dark": "/logo/encrova_logo_dark.png",
     "light": "/logo/encrova-logo.png"
@@ -27,6 +28,9 @@
     }
   },
   "theme": "prism",
+  "api": {
+    "baseUrl": ["https://encryption.platform.dev.ai71services.ai", "http://localhost:8000"]
+  },
   "anchors": [
     {
       "name": "Slack",
@@ -46,8 +50,7 @@
     },
     {
       "name": "API Reference",
-      "url": "api-reference",
-      "openapi": "https://encryption.platform.dev.ai71services.ai/openapi.json"
+      "url": "api-reference"
     }
   ],
   "navigation": [
@@ -108,6 +111,81 @@
       "pages": [
         "libraries/javascript",
         "libraries/python"
+      ]
+    },
+    {
+      "group": "Overview",
+      "pages" : [
+        "api-reference/overview/introduction",
+        "api-reference/overview/workflow"
+      ]
+    },
+    {
+      "group" : "Onboarding",
+      "pages" : [
+        "api-reference/endpoints/onboarding/onboarding"
+      ]
+    },
+    {
+      "group" : "Secrets",
+      "pages" : [
+        "api-reference/endpoints/secrets/create"
+      ]
+    },
+    {
+      "group": "Encrova PKI",
+      "pages": [
+        {
+          "group": "Certificate Authorities",
+          "pages": [
+            "api-reference/endpoints/certificate-authorities/workspace",
+            "api-reference/endpoints/certificate-authorities/list",
+            "api-reference/endpoints/certificate-authorities/create",
+            "api-reference/endpoints/certificate-authorities/read",
+            "api-reference/endpoints/certificate-authorities/update",
+            "api-reference/endpoints/certificate-authorities/delete",
+            "api-reference/endpoints/certificate-authorities/renew",
+            "api-reference/endpoints/certificate-authorities/list-ca-certs",
+            "api-reference/endpoints/certificate-authorities/csr",
+            "api-reference/endpoints/certificate-authorities/cert",
+            "api-reference/endpoints/certificate-authorities/sign-intermediate",
+            "api-reference/endpoints/certificate-authorities/import-cert",
+            "api-reference/endpoints/certificate-authorities/issue-cert",
+            "api-reference/endpoints/certificate-authorities/sign-cert",
+            "api-reference/endpoints/certificate-authorities/crl"
+          ]
+        },
+        {
+          "group": "Certificates",
+          "pages": [
+            "api-reference/endpoints/certificates/list",
+            "api-reference/endpoints/certificates/read",
+            "api-reference/endpoints/certificates/revoke",
+            "api-reference/endpoints/certificates/delete",
+            "api-reference/endpoints/certificates/cert-body",
+            "api-reference/endpoints/certificates/issue-certificate",
+            "api-reference/endpoints/certificates/sign-certificate"
+          ]
+        }
+      ]
+    },
+    {
+      "group" : "Encryption Service",
+      "pages" : [
+        {
+          "group": "Symmetric",
+          "pages" : [
+            "api-reference/endpoints/symmetric/encryption",
+            "api-reference/endpoints/symmetric/decryption"
+          ]
+        },
+        {
+          "group": "Asymmetric",
+          "pages" : [
+            "api-reference/endpoints/asymmetric/encryption",
+            "api-reference/endpoints/asymmetric/decryption"
+          ]
+        }
       ]
     }
   ]
