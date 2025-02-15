@@ -45,9 +45,8 @@ This flowchart represents the onboarding process for an application that involve
 flowchart TD
 B["Onboarding App"] --> C{"Encryption Type (Symmetric or Asymmetric)"}
 C  --> D["Create workspace"]
-D -- Asymmetric--> E{"Create workspace"}
 D -- Symmetric--> F["Create Secrets"]
-E --> G["Create Certificate Authority"]
+D-- Asymmetric--> G["Create Certificate Authority"]
 G --> H["Issue Certificate"]
 H--> I["Encrova"]
 F --> I
@@ -71,7 +70,7 @@ F --> I
 }
 }%%
 flowchart TD
-    B["Encrova API or SDK"] --> C["Access using API Key and Secret Key)"]
+    B["Encrova API or SDK"] --> C["Access using API Key and Secret Key"]
     C  --> D["Encrova Service"]
     D  --> E{"Encryption Type"}
     E -- Symmetric--> F[Secrets from Encrova]
@@ -81,7 +80,10 @@ flowchart TD
     I-->J[Encrypt payload]
     G-- decryption -->K[Extract private cert]
     K -->L[Decrypt JWE]
-    L--plain text-->B
-    J--JWE-->B
-    H--JWE or plain text-->B
+    L -->N[Final Response]
+    J-->N
+    N--Plain text or JWE-->B
+    H-->N
+
+
 ```

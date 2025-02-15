@@ -50,26 +50,48 @@ See the example below or check example.py for detailed usage:
 
 ```python
 
+
 import asyncio
 
 from encrova_sdk.EncrovaSDKClient import EncrovaSDKClient
 
 async def main():
+    """
+    Demonstrates the usage of Encrova SDK for encryption and decryption
+    operations.
 
+    The example shows:
+    1. Initializing the Encrova SDK client with symmetric or asymmetric encryption
+    2. Encrypting a JSON payload containing identity provider configurations
+    3. Decrypting the encrypted JWE (JSON Web Encryption) token
+    """
+
+    # Initialize Encrova SDK client with symmetric or asymmetric encryption mode
+    # encryption_type can be either "symmetric" or "asymmetric"
     encrova_client = EncrovaSDKClient(
-            host="http://localhost:8000",
-            encryption_type="symmetric"
+                host="http://localhost:8000",
+                encryption_type="symmetric"
     )
+
+    # Encrypt a JSON payload using the encrypt API
+    # Parameters:
+    # - payload: JSON object containing the data to be encrypted
+    # - api_key: API key for authentication
+    # - secret_key: Secret key used for encryption
     jwe = await encrova_client.service.encrypt(
-        payload={"userName" : "udayakumar.rajan", "password" : "password123"}},
-        api_key=<Your API key>,
-        secret_key=<Your secret key>
+        payload={"username" : "udayakumar.rajan", "password" : "random"},
+        api_key="<API Key>",
+        secret_key="<Secret Key>"
     )
     print(f"jwe : {jwe}")
 
+    # Decrypt the JWE token using the decrypt API
+    # Parameters:
+    # - jwe: The encrypted JWE token to be decrypted
+    # - api_key: API key for authentication
     plaintext = await encrova_client.service.decrypt(
         jwe=jwe,
-        api_key=<Your API key>
+        api_key="<API Key>"
     )
     print(f"plain text : {plaintext}")
 
@@ -77,4 +99,5 @@ async def main():
 """ Run the async main function """
 if __name__ == "__main__":
     asyncio.run(main())
+
 ```
