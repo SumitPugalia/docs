@@ -16,13 +16,24 @@ import CurrentFeatures from "./current-features.mdx"
                 <li>AES-256 encryption ensures secrets are stored securely.</li>
             </Card>
             <Card title="Symmetric Encryption" icon="autoprefixer">
-                Fast and efficient encryption using AES-256, suitable for securing large datasets.
+                Fast and efficient encryption using <code>AES-256</code>, suitable for securing large datasets.
+            </Card>
+            <Card title="Asymmetric Encryption" icon="file-shield">
+                Fast and efficient encryption using <code>RSA-2048</code>, <code>RSA-4096</code>, <code>EC_prime256v1</code>, and <code>EC_secp384r1</code>,  suitable for securing sensitive data and critical transactions.
             </Card>
             <Card title="Org. Access Control" icon="buildings">
                 Multitenancy support to maintain the Tenants
             </Card>
+            <Card title="Secure Secret Storage" icon="lock">
+                <li>RSA, ECC certificate chains are stored securely</li>
+                <li>SSH credentials to provide secure and centralized SSH access control for your infrastructure.</li>
+                <li>End-to-end encryption, meaning even Encrova itself cannot access the secrets.</li>
+            </Card>
+            <Card title='Certificate Management' icon='seal-exclamation'>
+                Enable virtualization for testing in non-production  environments
+            </Card>
             <Card title="API & SDK integration" icon="webhook">
-                REST API and SDKs for seamless integration into applications for Symmetric encryption. It supports Python and Javascript
+                REST API and SDKs for seamless integration into applications for Symmetric & Asymmetric encryption. It supports <b>Python</b> and <b>Javascript</b>
             </Card>
             <Card title="Secret Sharing " icon="link">
                 Securely share encrypted secrets with authorized users while maintaining strict access control and encryption policies. This ensures that sensitive credentials, such as API keys, database passwords, and encryption keys, are only accessible to the right individuals or systems without compromising security.
@@ -32,11 +43,6 @@ import CurrentFeatures from "./current-features.mdx"
     </Tab>
     <Tab title="Upcoming Features">
         <CardGroup cols={1}>
-            <Card title="Secure Secret Storage" icon="lock">
-                <li>RSA, ECC certificate chains are stored securely</li>
-                <li>SSH credentials to provide secure and centralized SSH access control for your infrastructure.</li>
-                <li>End-to-end encryption, meaning even Encrova itself cannot access the secrets.</li>
-            </Card>
             <Card title="Role-Based Access Control (RBAC) & Permissions" icon="ruler-triangle">
                 <li>IAM integration for SSO and LDAP</li>
                 <li>Fine-grained access control for users and teams.</li>

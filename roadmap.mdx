@@ -9,17 +9,42 @@ The Roadmap will be constantly reviewed to ensure delivery inline with product d
 </Warning>
 <Tabs>
     <Tab title="Quarter 1">
+        <Icon icon="badge-check" color='green'/> Completed & Ready<br/>
+        <Icon icon="circle-half-stroke" color='orange'/> In Progress or Not Started
         <CardGroup cols={1}>
-            <Card title='Asymmetric Encryption' icon='file-certificate'>
+            <Card title="Secure Secret Storage" icon='badge-check' color="green">
+                <li>AES-256 encryption ensures secrets are stored securely.</li>
+            </Card>
+            <Card title="Symmetric Encryption" icon='badge-check' color="green">
+                Fast and efficient encryption using <code>AES-256</code>, suitable for securing large datasets.
+            </Card>
+            <Card title='Asymmetric Encryption' icon='badge-check' color="green">
                 RSA (2048/4096-bit) and ECC (P-256, P-384) for secure data transmission and digital signatures.
             </Card>
-            <Card title='Certificate Management' icon='seal-exclamation'>
+            <Card title="Secure Secret Storage" icon='badge-check' color="green" >
+                <li>RSA, ECC certificate chains are stored securely</li>
+                <li>SSH credentials to provide secure and centralized SSH access control for your infrastructure.</li>
+                <li>End-to-end encryption, meaning even Encrova itself cannot access the secrets.</li>
+            </Card>
+            <Card title='Certificate Management' icon='badge-check' color='green'>
                 Enable virtualization for testing in non-production  environments
             </Card>
-            <Card title='IAM Integration' icon='link'>
+            <Card title="API & SDK integration" icon="badge-check" color='green'>
+                REST API and SDKs for seamless integration into applications for Symmetric & Asymmetric encryption. It supports <b>Python</b> and <b>Javascript</b>
+            </Card>
+            <Card title="Secret Sharing " icon="badge-check" color='green'>
+                Securely share encrypted secrets with authorized users while maintaining strict access control and encryption policies. This ensures that sensitive credentials, such as API keys, database passwords, and encryption keys, are only accessible to the right individuals or systems without compromising security.
+            </Card>
+            <Card title='Certificate Management' icon='badge-check' color='green'>
+                Enable virtualization for testing in non-production  environments
+            </Card>
+            <Card title="Secure Secret Storage - SSH" icon='circle-half-stroke' color='orange'>
+                <li>SSH credentials to provide secure and centralized SSH access control for your infrastructure.</li>
+            </Card>
+            <Card title='IAM Integration' icon='circle-half-stroke' color='orange'>
                 IAM solutions into an application or system to handle authentication, authorization, and user identity management securely.
             </Card>
-            <Card title='Role-Based Access Control (RBAC) & Permissions' icon='universal-access'>
+            <Card title='Role-Based Access Control (RBAC) & Permissions' icon='circle-half-stroke' color='orange'>
                 IAM solutions into an application or system to handle authentication, authorization, and user identity management securely.
             </Card>
 
